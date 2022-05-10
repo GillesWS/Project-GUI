@@ -6,7 +6,7 @@
 <main>
   <section class="py-5 text-center container">
     <div class="container"> 
-      <form #userForm="ngForm" (ngSubmit)="onUpdateServer()" novalidate>
+      <form #userForm="ngForm" novalidate>
       <table class="table table-trapped">
           <thead>
             <tr>
@@ -29,7 +29,7 @@
                 {{data.omschrijving}}
               </td>
               <td>
-                <button class="btn btn-primary aanpassen" (click)="onUpdateServer()">Aanpassen</button>
+                <button class="btn btn-primary aanpassen" routerLink="/editServerComponent" routerLinkActive="active">Aanpassen</button>
               </td>
             </tr>
             

@@ -12,7 +12,6 @@ import { VerwijderenComponentComponent } from './verwijderen-component/verwijder
 import {HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EditServerComponentComponent } from './edit-server-component/edit-server-component.component';
-import { DeleteServerComponentComponent } from './delete-server-component/delete-server-component.component';
 
 const routes: Routes = [
   { path: 'footerComponent', component: FooterComponentComponent },
@@ -23,7 +22,6 @@ const routes: Routes = [
   { path: 'aanpassenComponent', component: AanpassenComponentComponent },
   { path: 'verwijderenComponent', component: VerwijderenComponentComponent },
   { path: 'editServerComponent', component: EditServerComponentComponent },
-  { path: 'deleteServerComponent', component: DeleteServerComponentComponent}
 ];
 
 @NgModule({
@@ -43,7 +41,6 @@ const routes: Routes = [
     AanpassenComponentComponent,
     VerwijderenComponentComponent,
     EditServerComponentComponent,
-    DeleteServerComponentComponent,
   ],
   providers:[],
   bootstrap: [AppComponent]

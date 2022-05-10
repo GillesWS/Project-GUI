@@ -14,9 +14,11 @@ export class EditServerComponentComponent implements OnInit {
   lijsten : lijsten[] = [];
   val: any;
   @ViewChild('userForm') form!: NgForm;
+  id! : any
   lijstnaamText!: any;
   favcolor!: any;
   omschrijvingText!: any;
+
 
   
 
@@ -27,21 +29,27 @@ export class EditServerComponentComponent implements OnInit {
   }
   
    onUpdateServer(): void{
-     let sub = this.route.params.subscribe(params =>{
+     /*let sub = this.route.params.subscribe(params =>{
        this.val = params["id"];
      })
      console.log(this.val);
-    /*const nieuweLijst = {
+    const nieuweLijst = {
       id: null,
       lijstnaam: this.form.value.lijstnaamText,
       lijstkleur: this.form.value.favcolor,
       omschrijving: this.form.value.omschrijvingText
     }
-    this.ss.updateLijst(this.lijsten).subscribe(
+    const aangepasteLijst = {
+      id: this.form.value.id,
+      lijstnaam: this.form.value.lijstnaamText,
+      lijstkleur: this.form.value.favcolor,
+      omschrijving: this.form.value.omschrijvingText
+    }
+    this.ss.updateLijst(aangepasteLijst).subscribe(
       (response: lijsten) => {
         console.log('server updated, ',response);
         this.ss.getLijsten();
-        this.router.navigate(['lijsten ',this.lijsten.id]);
+        this.router.navigate(['lijsten ',aangepasteLijst.id]);
       }
     )*/
   } 

@@ -37,20 +37,29 @@ export class AanpassenComponentComponent implements OnInit {
       );
   }
 
-  onUpdateServer(): void{
-   /*const nieuweLijst = {
+  onUpdateServer(val: any){
+    /*let sub = this.route.params.subscribe(params =>{
+      this.val = params["id"];
+    })
+    console.log(this.val);
+   const nieuweLijst = {
      id: null,
      lijstnaam: this.form.value.lijstnaamText,
      lijstkleur: this.form.value.favcolor,
      omschrijving: this.form.value.omschrijvingText
-   }
-   this.ss.updateLijst(this.lijsten).subscribe(
+   }*/
+   this.ss.updateLijst(val).subscribe(
      (response: lijsten) => {
        console.log('server updated, ',response);
        this.ss.getLijsten();
-       this.router.navigate(['lijsten ',this.lijsten.id]);
+       this.router.navigate(['lijsten ',val]);
      }
-   )*/
- } 
+   )
+ }
+ 
+ toEdit(val: any){
+    this.router.navigate(['/editServerComponent', val]);
+ }
+
 
 }
