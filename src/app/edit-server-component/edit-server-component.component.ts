@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditServerComponentComponent implements OnInit {
 
-  lijsten : lijsten[] = [];
+  lijsten!: lijsten;
   val: any;
   @ViewChild('userForm') form!: NgForm;
   id! : any
@@ -44,23 +44,14 @@ export class EditServerComponentComponent implements OnInit {
       lijstnaam: this.form.value.lijstnaamText,
       lijstkleur: this.form.value.favcolor,
       omschrijving: this.form.value.omschrijvingText
-    }
-    this.ss.updateLijst(aangepasteLijst).subscribe(
+    }*/
+    this.ss.updateLijst(this.lijsten).subscribe(
       (response: lijsten) => {
-        console.log('server updated, ',response);
+        console.log('server updated: ', response);
         this.ss.getLijsten();
-        this.router.navigate(['lijsten ',aangepasteLijst.id]);
+        this.router.navigate(['lijsten', this.lijsten.id]);
       }
-    )*/
+    )
+   
   } 
-  onGetServer(): void{
-    this.ss.getLijsten().subscribe(
-      (response: lijsten[])=>{
-        console.log('received lijsten: ',response)
-        this.lijsten = response;
-      },
-      (error) => console.log('error: ',error),
-        () => console.log('ready!')
-      );
-  }
 }

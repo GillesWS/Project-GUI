@@ -2,15 +2,27 @@
   "lijsten": [
     {
       "id": 1,
-      "lijstnaam": "reh",
-      "lijstkleur": "#ff0000",
-      "omschrijving": "gvguvu"
+      "lijstnaam": "zegzeg",
+      "lijstkleur": "#660000",
+      "omschrijving": "egegh"
     },
     {
       "id": 2,
-      "lijstnaam": "edrj",
-      "lijstkleur": "#fbbcbc",
-      "omschrijving": "nbioiu"
+      "lijstnaam": "zegzeg",
+      "lijstkleur": "#ff0000",
+      "omschrijving": "uui"
+    },
+    {
+      "id": 3,
+      "lijstnaam": "erh",
+      "lijstkleur": "#000000",
+      "omschrijving": "gvtc"
+    },
+    {
+      "id": 4,
+      "lijstnaam": "gc",
+      "lijstkleur": "#04ff00",
+      "omschrijving": "uycx"
     }
   ]
 }

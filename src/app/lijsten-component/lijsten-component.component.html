@@ -13,9 +13,11 @@
       <table class="table table-trapped">
           <thead>
             <tr>
-              <th>Lijst naam:</th>
-              <th>Lijst kleur:</th>
-              <th>Omschrijving:</th>
+              <th>Lijst naam</th>
+              <th>Lijst kleur</th>
+              <th>Omschrijving</th>
+              <th>Aanpassen</th>
+              <th>Verwijderen</th>
             </tr>
           </thead>
 
@@ -24,8 +26,8 @@
               <td>
                 {{data.lijstnaam}}
               </td>
-              <td>
-                {{data.lijstkleur}}
+              <td [style.background-color]="data.lijstkleur">
+                
               </td>
               <td>
                 {{data.omschrijving}}

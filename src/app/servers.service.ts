@@ -22,8 +22,8 @@ export class ServersService {
     return this.http.post<lijsten>(url,lijsten);
   }
 
-  updateLijst(id: number): Observable<lijsten>{
-    const url = 'http://localhost:3000/lijsten' + id;
+  updateLijst(lijsten: lijsten): Observable<lijsten>{
+    const url = 'http://localhost:3000/lijsten/' + lijsten.id;
     return this.http.put<lijsten>(url,lijsten);
   }
 
