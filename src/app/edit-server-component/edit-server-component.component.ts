@@ -34,31 +34,11 @@ export class EditServerComponentComponent implements OnInit {
   }
   
    onUpdateServer(): void{
-     /*let sub = this.route.params.subscribe(params =>{
-       this.val = params["id"];
-     })
-     console.log(this.val);
-    const nieuweLijst = {
-      id: null,
-      lijstnaam: this.form.value.lijstnaamText,
-      lijstkleur: this.form.value.favcolor,
-      omschrijving: this.form.value.omschrijvingText
-    }
-    const aangepasteLijst = {
-      id: this.form.value.id,
-      lijstnaam: this.form.value.lijstnaamText,
-      lijstkleur: this.form.value.favcolor,
-      omschrijving: this.form.value.omschrijvingText
-    }*/
-    
-    this.ss.updateLijst(this.route.snapshot.params['id'], this.form.value).subscribe(
-      (result) => {
-        //nakijken
-        this.lijstnaamText = this.lijstnaamText;
-        this.favcolor = this.favcolor;
-        this.omschrijvingText = this.omschrijvingText;
+    console.log(this.form.value);
+    this.ss.updateLijst(this.route.snapshot.params['id']).subscribe(
+      (result: any) => {
         console.log('server updated: ', result);
-        //this.router.navigate(['lijsten', this.lijsten.id]);
+        this.router.navigate(['lijsten', this.lijsten.id]);
       }
     )
    
