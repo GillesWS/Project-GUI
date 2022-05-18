@@ -33,7 +33,7 @@
                 {{data.omschrijving}}
               </td>
               <td>
-                <button class="btn btn-primary aanpassen" routerLink="/editServerComponent" routerLinkActive="active">Aanpassen</button>
+                <button class="btn btn-primary aanpassen" routerLink="/editServerComponent/{{data.id}}">Aanpassen</button>
               </td>
               <td>
                 <button class="btn btn-primary verwijderen" (click)="deleteLijst(data.id)">Verwijderen</button>

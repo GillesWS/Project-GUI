@@ -12,6 +12,7 @@ import { VerwijderenComponentComponent } from './verwijderen-component/verwijder
 import {HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EditServerComponentComponent } from './edit-server-component/edit-server-component.component';
+import { NgForm, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'footerComponent', component: FooterComponentComponent },
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'toevoegenComponent', component: ToevoegenComponentComponent },
   { path: 'aanpassenComponent', component: AanpassenComponentComponent },
   { path: 'verwijderenComponent', component: VerwijderenComponentComponent },
-  { path: 'editServerComponent', component: EditServerComponentComponent },
+  { path: 'editServerComponent/:id', component: EditServerComponentComponent },
 ];
 
 @NgModule({
@@ -29,7 +30,8 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,

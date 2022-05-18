@@ -25,7 +25,12 @@ export class EditServerComponentComponent implements OnInit {
   constructor(private ss: ServersService,private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void{
-    //this.onUpdateServer();
+    this.ss.getLijstId(this.route.snapshot.params['id']).subscribe((result: any)=>{
+      this.lijstnaamText = result['lijstnaam'];
+      this.favcolor = result['lijstkleur'];
+      this.omschrijvingText = result['omschrijving'];
+    });
+    
   }
   
    onUpdateServer(): void{
@@ -45,11 +50,15 @@ export class EditServerComponentComponent implements OnInit {
       lijstkleur: this.form.value.favcolor,
       omschrijving: this.form.value.omschrijvingText
     }*/
-    this.ss.updateLijst(this.lijsten).subscribe(
-      (response: lijsten) => {
-        console.log('server updated: ', response);
-        this.ss.getLijsten();
-        this.router.navigate(['lijsten', this.lijsten.id]);
+    
+    this.ss.updateLijst(this.route.snapshot.params['id'], this.form.value).subscribe(
+      (result) => {
+        //nakijken
+        this.lijstnaamText = this.lijstnaamText;
+        this.favcolor = this.favcolor;
+        this.omschrijvingText = this.omschrijvingText;
+        console.log('server updated: ', result);
+        //this.router.navigate(['lijsten', this.lijsten.id]);
       }
     )
    

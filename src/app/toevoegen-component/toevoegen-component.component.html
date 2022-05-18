@@ -9,7 +9,6 @@
 
     <section class="py-5 text-center container">
       <form #userForm="ngForm" (ngSubmit)="onAddLijst()" novalidate>
-        {{userForm.value | json }}
       <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Lijst naam:</label>
         <input type="text" class="form-control" id="lijstnaamText" placeholder="Naam van de lijst" name="lijstnaamText" required

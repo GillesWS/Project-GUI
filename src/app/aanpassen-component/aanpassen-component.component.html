@@ -6,7 +6,7 @@
 <main>
   <section class="py-5 text-center container">
     <div class="container"> 
-      <form #userForm="ngForm" novalidate>
+      <form #userFormEdit="ngForm" novalidate>
       <table class="table table-trapped">
           <thead>
             <tr>
@@ -22,14 +22,14 @@
               <td>
                 {{data.lijstnaam}}
               </td>
-              <td>
-                {{data.lijstkleur}}
+              <td [style.background-color]="data.lijstkleur">
+               
               </td>
               <td>
                 {{data.omschrijving}}
               </td>
               <td>
-                <button class="btn btn-primary aanpassen" routerLink="/editServerComponent" routerLinkActive="active">Aanpassen</button>
+                <a class="btn btn-primary aanpassen" routerLink="/editServerComponent/{{data.id}}">Aanpassen</a>
               </td>
             </tr>
             

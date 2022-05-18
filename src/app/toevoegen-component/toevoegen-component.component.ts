@@ -3,6 +3,7 @@ import { ServersService } from '../servers.service';
 import { lijsten } from '../lijsten';
 import { NgForm, NgModelGroup } from '@angular/forms';
 
+
 @Component({
   selector: 'app-toevoegen-component',
   templateUrl: './toevoegen-component.component.html',
@@ -42,10 +43,11 @@ export class ToevoegenComponentComponent implements OnInit {
     this.ServersService.addLijst(nieuweLijst).subscribe(
       (response) => {
         console.log('lijst toegevoegd: ',response);
-        this.onGetServer();
+        
       }
     ),
     (error: any) => console.log('error', error);
+    
   }
 }
 

@@ -13,7 +13,7 @@ export class ServersService {
   lijsten : lijsten[] = [];
 
   getLijsten(): Observable<lijsten[]> {
-    const url : string = "http://localhost:3000/lijsten";
+    const url = "http://localhost:3000/lijsten";
     return this.http.get<lijsten[]>(url);
   }
 
@@ -22,14 +22,19 @@ export class ServersService {
     return this.http.post<lijsten>(url,lijsten);
   }
 
-  updateLijst(lijsten: lijsten): Observable<lijsten>{
-    const url = 'http://localhost:3000/lijsten/' + lijsten.id;
-    return this.http.put<lijsten>(url,lijsten);
+  updateLijst(id: any, data: any){
+    const url = 'http://localhost:3000/lijsten/' + id;
+    return this.http.put(url,lijsten);
   }
 
   deleteLijst(id: number): Observable<any>{
     const url = 'http://localhost:3000/lijsten/' + id;
     return this.http.delete<lijsten>(url);
+  }
+
+  getLijstId(id: any){
+    const url = 'http://localhost:3000/lijsten/';
+    return this.http.get( `${url}/${id}` );
   }
 
 }

@@ -8,7 +8,6 @@ import { ToevoegenComponentComponent } from './toevoegen-component/toevoegen-com
 import { VerwijderenComponentComponent } from './verwijderen-component/verwijderen-component.component'
 import { AanpassenComponentComponent } from './aanpassen-component/aanpassen-component.component'
 import { EditServerComponentComponent } from './edit-server-component/edit-server-component.component';
-import { DeleteServerComponentComponent } from './delete-server-component/delete-server-component.component';
 
 const routes: Routes = [
   { path: 'footerComponent', component: FooterComponentComponent },
@@ -18,8 +17,7 @@ const routes: Routes = [
   { path: 'toevoegenComponent', component: ToevoegenComponentComponent },
   { path: 'aanpassenComponent', component: AanpassenComponentComponent },
   { path: 'verwijderenComponent', component: VerwijderenComponentComponent },
-  { path: 'editServerComponent', component: EditServerComponentComponent },
-  { path: 'deleteServerComponent', component: DeleteServerComponentComponent}
+  { path: 'editServerComponent/:id', component: EditServerComponentComponent },
 ];
 
 @NgModule({

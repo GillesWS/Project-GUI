@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { lijsten } from '../lijsten';
 import { ServersService } from '../servers.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-verwijderen-component',
@@ -10,19 +12,38 @@ import { ServersService } from '../servers.service';
 export class VerwijderenComponentComponent implements OnInit {
 
   lijsten : lijsten[] = [];
+  lijst!: lijsten;
+  val: any;
+  @ViewChild('userForm') form!: NgForm;
+  lijstnaamText!: any;
+  favcolor!: any;
+  omschrijvingText!: any;
 
-  constructor(private ss: ServersService) {}
+  constructor(private ss: ServersService,private router: Router) {}
 
   ngOnInit(): void{
-    
+    this.onGetServer();
+  }
+
+  onGetServer(): void{
+    this.ss.getLijsten().subscribe(
+      (response: lijsten[])=>{
+        console.log('received lijsten: ',response)
+        this.lijsten = response;
+      },
+      (error) => console.log('error: ',error),
+        () => console.log('ready!')
+      );
   }
   
   deleteLijst(val: any){
     if (confirm("Are you sure you want to delete? ")){
+    this.ss.deleteLijst(val).subscribe(
+      data => {});
     this.ss.deleteLijst(val).subscribe((response) => {
       this.lijsten = response;
     });
-    this.ss.getLijsten();
   }
+  this.onGetServer();
   }
 }

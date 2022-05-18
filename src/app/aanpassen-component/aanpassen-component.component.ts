@@ -11,10 +11,10 @@ import { NgForm } from '@angular/forms';
 })
 export class AanpassenComponentComponent implements OnInit {
 
-  lijsten : lijsten[] = [];
+  lijsten: lijsten[] = [];
   lijst!: lijsten;
   val: any;
-  @ViewChild('userForm') form!: NgForm;
+  @ViewChild('userFormEdit') form!: NgForm;
   lijstnaamText!: any;
   favcolor!: any;
   omschrijvingText!: any;
@@ -36,30 +36,5 @@ export class AanpassenComponentComponent implements OnInit {
         () => console.log('ready!')
       );
   }
-
-  onUpdateServer(val: any){
-    /*let sub = this.route.params.subscribe(params =>{
-      this.val = params["id"];
-    })
-    console.log(this.val);
-   const nieuweLijst = {
-     id: null,
-     lijstnaam: this.form.value.lijstnaamText,
-     lijstkleur: this.form.value.favcolor,
-     omschrijving: this.form.value.omschrijvingText
-   }*/
-   this.ss.updateLijst(val).subscribe(
-     (response: lijsten) => {
-       console.log('server updated, ',response);
-       this.ss.getLijsten();
-       this.router.navigate(['lijsten ',val]);
-     }
-   )
- }
- 
- toEdit(val: any){
-    this.router.navigate(['/editServerComponent', val]);
- }
-
 
 }

@@ -10,8 +10,6 @@ import { ServersService } from './servers.service';
 export class AppComponent {
   title = 'todo';
 
-  nieuwelijst = new lijsten(null ,'Kak', 'bruin','platte diarree');
-
   lijsten : lijsten[] = [];
 
   constructor(private ss: ServersService) {}
@@ -36,19 +34,4 @@ export class AppComponent {
       );
   }
 
-  onAddLijst(): void{
-    const nieuweLijst = {
-      id: this.nieuwelijst.id,
-      lijstnaam: this.nieuwelijst.lijstnaam,
-      lijstkleur: this.nieuwelijst.lijstkleur,
-      omschrijving: this.nieuwelijst.omschrijving
-    }
-    this.ss.addLijst(nieuweLijst).subscribe(
-      (response) => {
-        console.log('lijst toegevoegd: ',response);
-        this.onGetServer();
-      }
-    ),
-    (error: any) => console.log('error', error);
-  }
 }

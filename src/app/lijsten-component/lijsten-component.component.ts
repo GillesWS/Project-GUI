@@ -35,8 +35,8 @@ export class LijstenComponentComponent implements OnInit {
     this.ss.deleteLijst(val).subscribe((response) => {
       this.lijsten = response;
     });
-    this.onGetServer();
   }
+  this.onGetServer();
   }
 
   
