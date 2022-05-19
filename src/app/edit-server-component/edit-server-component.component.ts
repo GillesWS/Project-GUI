@@ -35,10 +35,9 @@ export class EditServerComponentComponent implements OnInit {
   
    onUpdateServer(): void{
     console.log(this.form.value);
-    this.ss.updateLijst(this.route.snapshot.params['id']).subscribe(
+    this.ss.updateLijst(this.route.snapshot.params['id'], this.form.value).subscribe(
       (result: any) => {
         console.log('server updated: ', result);
-        this.router.navigate(['lijsten', this.lijsten.id]);
       }
     )
    

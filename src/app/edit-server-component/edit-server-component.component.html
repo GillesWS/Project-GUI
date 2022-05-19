@@ -11,14 +11,14 @@
       <form #userForm="ngForm" (ngSubmit)="onUpdateServer()" novalidate>
       <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Lijst naam:</label>
-        <input type="text" class="form-control" id="lijstnaamText" placeholder="Naam van de lijst" name="lijstnaamText" required
+        <input type="text" class="form-control" id="lijstnaamText" placeholder="Naam van de lijst" name="lijstnaam" required
         [(ngModel)]="lijstnaamText">
           
       </div>
       <label for="formGroupExampleInput" class="form-label">Lijst kleur:</label>
       <div class="card">
         <div class="card-body text-center d-flex justify-content-center align-items-center flex-column" >
-          <input type="color" id="favcolor" name="favcolor" value="#ff0000" required
+          <input type="color" id="favcolor" name="lijstkleur" value="#ff0000" required
           [(ngModel)]="favcolor">
           <div id="color-picker-1" class="mx-auto"></div>
           
@@ -26,7 +26,7 @@
       </div>
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">To Do:</label>
-        <textarea class="form-control" id="omschrijvingText" rows="3" placeholder="Wat moet je nog doen?" name="omschrijvingText" required
+        <textarea class="form-control" id="omschrijvingText" rows="3" placeholder="Wat moet je nog doen?" name="omschrijving" required
         [(ngModel)]="omschrijvingText"></textarea> 
       </div>
       <div class="d-grid gap-2">
