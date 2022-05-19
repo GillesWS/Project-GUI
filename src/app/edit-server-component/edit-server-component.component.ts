@@ -40,6 +40,6 @@ export class EditServerComponentComponent implements OnInit {
         console.log('server updated: ', result);
       }
     )
-   
+    
   } 
 }
