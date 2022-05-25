@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ServersService } from '../servers.service';
 import { lijsten } from '../lijsten';
 import { NgForm, NgModelGroup } from '@angular/forms';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-toevoegen-component',
@@ -17,7 +17,7 @@ export class ToevoegenComponentComponent implements OnInit {
   favcolor!: any;
   omschrijvingText!: any;
 
-  constructor(private ServersService: ServersService) { }
+  constructor(private ServersService: ServersService,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -43,11 +43,15 @@ export class ToevoegenComponentComponent implements OnInit {
     this.ServersService.addLijst(nieuweLijst).subscribe(
       (response) => {
         console.log('lijst toegevoegd: ',response);
-        
+        this.goToPage('./lijstenComponent');
       }
     ),
     (error: any) => console.log('error', error);
     
+  }
+
+  goToPage(pageName:string):void{
+    this.router.navigate([`${pageName}`]);
   }
 }
 

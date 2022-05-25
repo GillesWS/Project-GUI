@@ -1,34 +1,22 @@
 {
   "lijsten": [
     {
-      "id": 1,
-      "lijstnaam": "zegzeg",
-      "lijstkleur": "#520000",
-      "omschrijving": "gvcfc"
-    },
-    {
-      "id": 2,
-      "lijstnaam": "edrj",
-      "lijstkleur": "#800000",
-      "omschrijving": "gvfgcf"
-    },
-    {
       "id": 3,
       "lijstnaam": "ezgv",
       "lijstkleur": "#00ad6b",
       "omschrijving": "bvkvk"
     },
     {
-      "id": 4,
-      "lijstnaam": "zjkbvk",
+      "lijstnaam": "dommeaap",
       "lijstkleur": "#0a0000",
-      "omschrijving": "rbeb"
+      "omschrijving": "rbeb",
+      "id": 4
     },
     {
       "id": 5,
-      "lijstnaam": "azzcz",
-      "lijstkleur": "#004cff",
-      "omschrijving": "bebebu"
+      "lijstnaam": "killi",
+      "lijstkleur": "#00ff62",
+      "omschrijving": "killi stinkt naar pure diarree"
     }
   ]
 }

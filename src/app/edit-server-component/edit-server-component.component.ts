@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { lijsten } from '../lijsten';
 import { ServersService } from '../servers.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LijstenComponentComponent } from '../lijsten-component/lijsten-component.component';
 
 @Component({
   selector: 'app-edit-server-component',
@@ -38,8 +39,13 @@ export class EditServerComponentComponent implements OnInit {
     this.ss.updateLijst(this.route.snapshot.params['id'], this.form.value).subscribe(
       (result: any) => {
         console.log('server updated: ', result);
+        this.goToPage('./lijstenComponent');
       }
+      
     )
     
   } 
+  goToPage(pageName:string):void{
+    this.router.navigate([`${pageName}`]);
+  }
 }
