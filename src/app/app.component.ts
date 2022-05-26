@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { lijsten } from './lijsten';
 import { ServersService } from './servers.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
 
   lijsten : lijsten[] = [];
 
-  constructor(private ss: ServersService) {}
+  constructor(private ss: ServersService,private router: Router) {}
 
   columns = ["id","Lijst naam", "Lijst kleur", "Omschrijving"];
 
@@ -20,7 +21,7 @@ export class AppComponent {
 
 
   ngOnInit(): void{
-    this.onGetServer();
+    this.goToPage('/homeComponent');
   }
   
   onGetServer(): void{
@@ -32,6 +33,10 @@ export class AppComponent {
       (error) => console.log('error: ',error),
         () => console.log('ready!')
       );
+  }
+
+  goToPage(pageName:string):void{
+    this.router.navigate([`${pageName}`]);
   }
 
 }

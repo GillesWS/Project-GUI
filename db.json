@@ -1,22 +1,22 @@
 {
   "lijsten": [
     {
-      "id": 3,
-      "lijstnaam": "ezgv",
-      "lijstkleur": "#00ad6b",
-      "omschrijving": "bvkvk"
+      "id": 1,
+      "lijstnaam": "Test1",
+      "lijstkleur": "#ff0000",
+      "omschrijving": "Tester 1"
     },
     {
-      "lijstnaam": "dommeaap",
-      "lijstkleur": "#0a0000",
-      "omschrijving": "rbeb",
-      "id": 4
+      "lijstnaam": "Test2",
+      "lijstkleur": "#11ff00",
+      "omschrijving": "Tester 2",
+      "id": 3
     },
     {
-      "id": 5,
-      "lijstnaam": "killi",
-      "lijstkleur": "#00ff62",
-      "omschrijving": "killi stinkt naar pure diarree"
+      "id": 4,
+      "lijstnaam": "Test3",
+      "lijstkleur": "#ffdd00",
+      "omschrijving": "Tester 3\n"
     }
   ]
 }

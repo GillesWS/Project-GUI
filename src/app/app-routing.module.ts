@@ -10,6 +10,7 @@ import { AanpassenComponentComponent } from './aanpassen-component/aanpassen-com
 import { EditServerComponentComponent } from './edit-server-component/edit-server-component.component';
 
 const routes: Routes = [
+  
   { path: 'footerComponent', component: FooterComponentComponent },
   { path: 'headerComponent', component: HeaderComponentComponent },
   { path: 'homeComponent', component: HomeComponentComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'aanpassenComponent', component: AanpassenComponentComponent },
   { path: 'verwijderenComponent', component: VerwijderenComponentComponent },
   { path: 'editServerComponent/:id', component: EditServerComponentComponent },
+  {path:'',redirectTo:'homeComponent', component: HomeComponentComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
